@@ -1,0 +1,12 @@
+[submodule "converter"]
+	path = converter
+	url = https://gitlab.com/circuitgraph/converter.git
+[submodule "framework"]
+	path = framework
+	url = https://gitlab.com/circuitgraph/framework.git
+[submodule "insights"]
+	path = insights
+	url = https://gitlab.com/circuitgraph/insights.git
+[submodule "ui"]
+	path = ui
+	url = https://gitlab.com/circuitgraph/ui.git
