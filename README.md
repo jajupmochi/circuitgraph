@@ -28,7 +28,8 @@ pip3.6 install -r ui/requirements.txt
 
 Dowload the CGHD dataset from [Zenodo](https://zenodo.org/record/8266951) or [Kaggle](https://www.kaggle.com/datasets/johannesbayer/cghd1152) and place the content of the zip file in the `gtdb-hd` folder.
 
-## Starting the Desktop Application
+## Desktop Application Usage
+While beeing in the root folder of the `main` repository, run:
 
 ```
 python3 -m ui.main
