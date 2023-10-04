@@ -10,3 +10,6 @@
 [submodule "ui"]
 	path = ui
 	url = https://gitlab.com/circuitgraph/ui.git
+[submodule "extraction"]
+	path = extraction
+	url = https://gitlab.com/circuitgraph/extraction.git
