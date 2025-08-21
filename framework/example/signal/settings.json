@@ -1,0 +1,30 @@
+{
+    "RampGen":{
+        "host": "localhost",
+        "port": 7000,
+        "module": "framework.example.signal.rampGenerator"
+    },
+    "LittleNoise":{
+        "host": "localhost",
+        "port": 7100,
+        "module": "framework.example.signal.noiseApplicator",
+        "settings": {
+            "mean": 0.1,
+            "std": 1.2
+        }
+    },
+    "MuchNoise":{
+        "host": "localhost",
+        "port": 7150,
+        "module": "framework.example.signal.noiseApplicator",
+        "settings": {
+            "mean": 1.5,
+            "std": 12.6
+        }
+    },
+    "MyFirstSignal":{
+        "host": "localhost",
+        "port": 7200,
+        "module": "framework.example.signal.signalGenerator"
+    }
+}

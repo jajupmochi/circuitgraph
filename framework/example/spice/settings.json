@@ -1,0 +1,43 @@
+{
+    "SpiceGenerator":{
+        "host": "localhost",
+        "port": 8000,
+        "module": "framework.example.spice.spiceGenerator"
+    },
+    "SpiceGeneratorAdvanced":{
+        "host": "localhost",
+        "port": 8100,
+        "module": "framework.example.spice.spiceGeneratorAdvanced"
+    },
+    "SpiceRefiner":{
+        "host": "localhost",
+        "port": 8200,
+        "module": "framework.example.spice.spiceRefiner",
+        "settings":{
+            "refinementTime": 5
+        }
+    },
+    "myFirstPipeLine": {
+        "host": "localhost",
+        "port": 8300,
+        "module": "framework.utils.Pipeline",
+        "settings":{
+            "nodes":[
+                {
+                    "name": "SpiceGenerator",
+                    "method":"garlic"
+                },
+                {
+                    "name": "SpiceRefiner",
+                    "method": "selectGarlic",
+                    "transform": {
+                        "garlicForRefinement": {
+                            "source": "SpiceGenerator",
+                            "slice": null
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

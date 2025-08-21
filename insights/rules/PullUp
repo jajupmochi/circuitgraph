@@ -1,0 +1,21 @@
+[PullUpResistor:
+
+(?resistor rdf:type wikidata:Q5321),
+(?R1 rdf:type wikidata:Q947546),(?resistor wikidata-prop:P527 ?R1),
+(?R2 rdf:type wikidata:Q947546),(?resistor wikidata-prop:P527 ?R2),
+notEqual(?R1, ?R2),
+
+(?switch rdf:type wikidata:Q5320),
+(?SW1 rdf:type wikidata:Q947546),(?switch wikidata-prop:P527 ?SW1),
+(?SW2 rdf:type wikidata:Q947546),(?switch wikidata-prop:P527 ?SW2),
+notEqual(?SW1, ?SW2),
+
+(?microcontroller rdf:type wikidata:Q80831),
+(?IC1 rdf:type wikidata:Q947546),(?microcontroller wikidata-prop:P527 ?IC1),
+
+
+(?IC1 wikidata-prop:P2789 ?R1),
+(?IC1 wikidata-prop:P2789 ?SW1)
+
+
+-> (?resistor wikidata-prop:P366 wikidata:Q1987617)]

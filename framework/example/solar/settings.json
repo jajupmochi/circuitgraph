@@ -1,0 +1,51 @@
+{
+    "SolarSensor":{
+        "host": "localhost",
+        "port": 8000,
+        "module": "framework.example.solar.Sensor"
+    },
+    "DB":{
+        "host": "localhost",
+        "port": 8100,
+        "module": "framework.example.solar.Database"
+    },
+    "processPipeLine": {
+        "host": "localhost",
+        "port": 8300,
+        "module": "framework.utils.Pipeline",
+        "settings":{
+            "nodes":[
+                {
+                    "name": "SolarSensor",
+                    "method":"data"
+                },
+                {
+                    "name": "DB",
+                    "method": "add",
+                    "transform": {
+                        "key": {
+                            "value": "app130/solar"
+                        },
+                        "date": {
+                            "source": "SolarSensor",
+                            "slice": null
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "timer":{
+        "host": "localhost",
+        "port": 8200,
+        "module": "framework.utils.Clock",
+        "settings": {
+            "start_immediate": true,
+            "period": 1,
+            "target": {
+                "name": "processPipeLine",
+                "method":"execute"
+            }
+        }
+    }
+}

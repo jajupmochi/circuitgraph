@@ -1,0 +1,8 @@
+[switchelectronic: (?transistor.bjt rdf:type wikidata:Q5339),
+(?collector rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?collector),(?collector wikidata-prop:P2561 ?2),
+(?emitter rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?emitter),(?emitter wikidata-prop:P2561 ?3),
+(?base rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?base),(?base wikidata-prop:P2561 ?1),
+(?resistor rdf:type wikidata:Q5321),
+(?resistor wikidata-prop:P2789 ?base),(?emitter wikidata-prop:P2789 ?gnd)
+ -> (?transistor.bjt wikidata-prop:P366 wikidata:Q5358435)]
+

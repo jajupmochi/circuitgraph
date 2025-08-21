@@ -1,0 +1,9 @@
+[VoltageDivider: (?diode rdf:type wikidata:Q11656),
+(?diodeAnode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeAnode),(?diodeAnode wikidata-prop:P2561 "1"),
+(?diodeCathode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeCathode),(?diodeCathode wikidata-prop:P2561 "2"),
+(?inductor rdf:type wikidata:Q5325),
+(?coil1 rdf:type wikidata:Q947546),(?inductor wikidata-prop:P527 ?coil1),
+(?coil2 rdf:type wikidata:Q947546),(?inductor wikidata-prop:P527 ?coil2),
+notEqual(?coil1, ?coil2),
+(?coil1 wikidata-prop:P2789 ?diodeCathode),(?coil2 wikidata-prop:P2789 ?diodeAnode),
+-> (?diode wikidata-prop:P366 wikidata:Q888791)]

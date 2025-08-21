@@ -1,0 +1,22 @@
+{
+    "RampGen":{
+        "module": "framework.example.signal.rampGenerator"
+    },
+    "LittleNoise":{
+        "module": "framework.example.signal.noiseApplicator",
+        "settings": {
+            "mean": 0.1,
+            "std": 1.2
+        }
+    },
+    "MuchNoise":{
+        "module": "framework.example.signal.noiseApplicator",
+        "settings": {
+            "mean": 1.5,
+            "std": 12.6
+        }
+    },
+    "MyFirstSignal":{
+        "module": "framework.example.signal.signalGenerator"
+    }
+}

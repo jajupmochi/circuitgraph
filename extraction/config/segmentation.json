@@ -1,0 +1,34 @@
+{
+  "model_class": "extraction.src.models.unet/Unet",
+  "model_parameter": {
+
+  },
+  "dataloader_class": "extraction.src.loader.segmentationLoader/SegmentationLoader",
+  "processor_class": "extraction.src.processor.segmentationProcessor/SegmentationProcessor",
+  "processor_parameter": {
+    "patch_size": 256,
+    "samples_per_image": 200
+  },
+  "optimizer_class": "torch.optim/SGD",
+  "optimizer_parameter": {
+    "lr": 0.1,
+    "weight_decay": 0.00001
+  },
+  "scheduler_class": "torch.optim.lr_scheduler/StepLR",
+  "scheduler_parameter": {
+    "step_size": 1,
+    "gamma": 0.99
+  },
+  "training_parameter": {
+    "drafters_set_train": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 25],
+    "drafters_set_val": [21, 22],
+    "drafter_set_test": [23, 24],
+    "db_path": "gtdb-hd",
+    "batch_size": 4,
+    "epochs": 50,
+    "name": "segmentation",
+    "loss_fn": "torch.nn/MSELoss",
+    "acc_fn": "extraction.src.utils.binaryAccuracy/bin_acc",
+    "debug": false
+  }
+}

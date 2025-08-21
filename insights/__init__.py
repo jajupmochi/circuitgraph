@@ -1,0 +1,2 @@
+# Insights package initializer
+

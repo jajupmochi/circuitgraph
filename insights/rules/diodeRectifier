@@ -1,0 +1,23 @@
+[diodeRectifier:
+(?diode1 rdf:type wikidata:Q11656),
+(?diodeAnode1 rdf:type wikidata:Q947546),(?diode1 wikidata-prop:P527 ?diodeAnode1),(?diodeAnode1 wikidata-prop:P2561 "1"),
+(?diodeCathode1 rdf:type wikidata:Q947546),(?diode1 wikidata-prop:P527 ?diodeCathode1),(?diodeCathode1 wikidata-prop:P2561 "2"),
+(?diode2 rdf:type wikidata:Q11656),
+(?diodeAnode2 rdf:type wikidata:Q947546),(?diode2 wikidata-prop:P527 ?diodeAnode2),(?diodeAnode2 wikidata-prop:P2561 "1"),
+(?diodeCathode2 rdf:type wikidata:Q947546),(?diode2 wikidata-prop:P527 ?diodeCathode2),(?diodeCathode2 wikidata-prop:P2561 "2"),
+(?diode3 rdf:type wikidata:Q11656),
+(?diodeAnode3 rdf:type wikidata:Q947546),(?diode3 wikidata-prop:P527 ?diodeAnode3),(?diodeAnode3 wikidata-prop:P2561 "1"),
+(?diodeCathode3 rdf:type wikidata:Q947546),(?diode3 wikidata-prop:P527 ?diodeCathode3),(?diodeCathode3 wikidata-prop:P2561 "2"),
+(?diode4 rdf:type wikidata:Q11656),
+(?diodeAnode4 rdf:type wikidata:Q947546),(?diode4 wikidata-prop:P527 ?diodeAnode4),(?diodeAnode4 wikidata-prop:P2561 "1"),
+(?diodeCathode4 rdf:type wikidata:Q947546),(?diode4 wikidata-prop:P527 ?diodeCathode4),(?diodeCathode4 wikidata-prop:P2561 "2"),
+notEqual(?diode1,?diode2),notEqual(?diode2,?diode3),notEqual(?diode3,?diode4),notEqual(?diode1,?diode4),notEqual(?diode1,?diode3),notEqual(?diode2,?diode4),
+
+(?diodeAnode1 wikidata-prop:P2789 ?diodeAnode4),(?diodeCathode1 wikidata-prop:P2789 ?diodeAnode2),(?diodeCathode2 wikidata-prop:P2789 ?diodeCathode3),(?diodeCathode4 wikidata-prop:P2789 ?diodeAnode3)
+ -> (?diode1 wikidata-prop:P366 wikidata:Q1146554),(?diode2 wikidata-prop:P366 wikidata:Q1146554),(?diode3 wikidata-prop:P366 wikidata:Q1146554),(?diode4 wikidata-prop:P366 wikidata:Q1146554)]
+
+
+
+
+
+

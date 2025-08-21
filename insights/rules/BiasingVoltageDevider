@@ -1,0 +1,27 @@
+[VoltageDivider1:
+(?resistor1 rdf:type wikidata:Q5321),
+(?A1 rdf:type wikidata:Q947546),(?resistor1 wikidata-prop:P527 ?A1),
+(?B1 rdf:type wikidata:Q947546),(?resistor1 wikidata-prop:P527 ?B1),
+notEqual(?A1, ?B1),
+(?resistor2 rdf:type wikidata:Q5321),
+(?A2 rdf:type wikidata:Q947546),(?resistor2 wikidata-prop:P527 ?A2),
+(?B2 rdf:type wikidata:Q947546),(?resistor2 wikidata-prop:P527 ?B2),
+notEqual(?A2, ?B2),
+(?VDC rdf:type wikidata:Q352670),
+(?gnd rdf:type wikidata:Q6501125),
+
+(?A1 wikidata-prop:P2789 ?VDC),(?B1 wikidata-prop:P2789 ?A2)-> (?resistor1 wikidata-prop:P366 wikidata:Q466758)]
+
+[VoltageDivider2:
+(?resistor1 rdf:type wikidata:Q5321),
+(?A1 rdf:type wikidata:Q947546),(?resistor1 wikidata-prop:P527 ?A1),
+(?B1 rdf:type wikidata:Q947546),(?resistor1 wikidata-prop:P527 ?B1),
+notEqual(?A1, ?B1),
+(?resistor2 rdf:type wikidata:Q5321),
+(?A2 rdf:type wikidata:Q947546),(?resistor2 wikidata-prop:P527 ?A2),
+(?B2 rdf:type wikidata:Q947546),(?resistor2 wikidata-prop:P527 ?B2),
+notEqual(?A2, ?B2),
+(?VSS rdf:type wikidata:Q11252983),
+(?gnd rdf:type wikidata:Q6501125),
+
+(?A1 wikidata-prop:P2789 ?VSS),(?B1 wikidata-prop:P2789 ?A2)-> (?resistor1 wikidata-prop:P366 wikidata:Q466758)]

@@ -1,0 +1,36 @@
+ [AstableOscillator:
+(?transistor.bjt1 rdf:type wikidata:Q5339),
+(?collector1 rdf:type wikidata:Q947546),(?transistor.bjt1 wikidata-prop:P527 ?collector1),(?collector1 wikidata-prop:P2561 "2"),
+(?emitter1 rdf:type wikidata:Q947546),(?transistor.bjt1 wikidata-prop:P527 ?emitter1),(?emitter1 wikidata-prop:P2561 "3"),
+(?base1 rdf:type wikidata:Q947546),(?transistor.bjt1 wikidata-prop:P527 ?base1),(?base1 wikidata-prop:P2561 "1"),
+
+(?transistor.bjt2 rdf:type wikidata:Q5339),
+(?collector2 rdf:type wikidata:Q947546),(?transistor.bjt2 wikidata-prop:P527 ?collector2),(?collector2 wikidata-prop:P2561 "2"),
+(?emitter2 rdf:type wikidata:Q947546),(?transistor.bjt2 wikidata-prop:P527 ?emitter2),(?emitter2 wikidata-prop:P2561 "3"),
+(?base2 rdf:type wikidata:Q947546),(?transistor.bjt2 wikidata-prop:P527 ?base2),(?base2 wikidata-prop:P2561 "1"),
+notEqual(?transistor.bjt1,?transistor.bjt2),
+
+(?capacitor1 rdf:type wikidata:Q1326992),
+(?A1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?A1),
+(?B1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?B1),
+notEqual(?A1, ?B1),
+(?capacitor2 rdf:type wikidata:Q1326992),
+(?A2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?A2),
+(?B2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?B2),
+notEqual(?A2, ?B2),
+notEqual(?capacitor1,?capacitor2),
+
+(?resistor1 rdf:type wikidata:Q5321),
+(?resistor2 rdf:type wikidata:Q5321),
+(?resistor3 rdf:type wikidata:Q5321),
+(?resistor4 rdf:type wikidata:Q5321),
+notEqual(?resistor1,?resistor2),notEqual(?resistor1,?resistor3),notEqual(?resistor1,?resistor4),
+notEqual(?resistor2,?resistor3),notEqual(?resistor2,?resistor4),notEqual(?resistor4,?resistor3),
+
+
+ (?resistor1 wikidata-prop:P2789 ?A1),(?A1 wikidata-prop:P2789 ?collector1),(?B1 wikidata-prop:P2789 ?base2),(?emitter1 wikidata-prop:P2789 ?gnd),
+ (?resistor3 wikidata-prop:P2789 ?B1),
+ (?resistor2 wikidata-prop:P2789 ?B2),(?B2 wikidata-prop:P2789 ?collector2),(?A2 wikidata-prop:P2789 ?base1),(?emitter2 wikidata-prop:P2789 ?gnd),
+ (?resistor4 wikidata-prop:P2789 ?A2),
+ (?resistor2 wikidata-prop:P2789 ?collector2),(?resistor4 wikidata-prop:P2789 ?base1),(?resistor3 wikidata-prop:P2789 ?base2),(?resistor1 wikidata-prop:P2789 ?collector1)
+ -> (?transistor.bjt1 wikidata-prop:P366 wikidata:Q259838)]

@@ -1,0 +1,18 @@
+ [VoltageRegulation: (?VoltageRegulator rdf:type wikidata:Q6692746),
+(?input rdf:type wikidata:Q947546),(?VoltageRegulator wikidata-prop:P527 ?input),(?input wikidata-prop:P2561 "1"),
+(?GND rdf:type wikidata:Q947546),(?VoltageRegulator wikidata-prop:P527 ?GND),(?GND wikidata-prop:P2561 "2"),
+(?output rdf:type wikidata:Q947546),(?VoltageRegulator wikidata-prop:P527 ?output),(?GND wikidata-prop:P2561 "3"),
+
+(?capacitor1 rdf:type wikidata:Q1326992),
+(?A1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?A1),
+(?B1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?B1),
+notEqual(?A1, ?B1),
+
+(?capacitor2 rdf:type wikidata:Q337701),
+(?A2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?A2),
+(?B2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?B2),
+notEqual(?A2, ?B2),
+
+(?A1 wikidata-prop:P2789 ?input),(?A2 wikidata-prop:P2789 ?output)
+-> (?VoltageRegulator wikidata-prop:P366 wikidata:Q7940752)]
+

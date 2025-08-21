@@ -1,0 +1,25 @@
+ [OscillatorCrystal: (?crystal rdf:type wikidata:Q4173903),
+(?O1 rdf:type wikidata:Q947546),(?crystal wikidata-prop:P527 ?O1),
+(?O2 rdf:type wikidata:Q947546),(?crystal wikidata-prop:P527 ?O2),
+notEqual(?O1, ?O2),
+(?capacitor1 rdf:type wikidata:Q337701),
+(?A1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?A1),
+(?B1 rdf:type wikidata:Q947546),(?capacitor1 wikidata-prop:P527 ?B1),
+notEqual(?A1, ?B1),
+(?capacitor2 rdf:type wikidata:Q337701),
+(?A2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?A2),
+(?B2 rdf:type wikidata:Q947546),(?capacitor2 wikidata-prop:P527 ?B2),
+notEqual(?A2, ?B2),
+notEqual(?capacitor1,?capacitor2),
+
+(?O1 wikidata-prop:P2789 ?A1),(?O2 wikidata-prop:P2789 ?A2)
+-> (?crystal wikidata-prop:P366 wikidata:Q877055)]
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+ [CouplingCapacitor1:
+(?capacitor.unpolarized rdf:type wikidata:Q337701),
+(?transistor.bjt rdf:type wikidata:Q5339),
+(?base rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?base),(?base wikidata-prop:P2561 "1"),
+(?voltage.ac rdf:type wikidata:Q1161128),
+
+(?capacitor.unpolarized wikidata-prop:P2789 ?base),(?capacitor.unpolarized wikidata-prop:P2789 ?voltage.ac)
+-> (?capacitor.unpolarized wikidata-prop:P366 wikidata:Q884755)]
+
+ [CouplingCapacitor2: (?capacitor.unpolarized rdf:type wikidata:Q337701),
+ (?C1 rdf:type wikidata:Q947546),(?capacitor.unpolarized wikidata-prop:P527 ?C1),
+(?C2 rdf:type wikidata:Q947546),(?capacitor.unpolarized wikidata-prop:P527 ?C2),
+notEqual(?C1, ?C2),
+(?resistorE rdf:type wikidata:Q5321),
+(?resistorL rdf:type wikidata:Q5321),
+notEqual(?resistorE, ?resistorL),
+(?transistor.bjt rdf:type wikidata:Q5339),
+(?emitter rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?emitter),(?emitter wikidata-prop:P2561 "3"),
+(?C1 wikidata-prop:P2789 ?emitter),(?C1 wikidata-prop:P2789 ?resistorE),(?C2 wikidata-prop:P2789 ?resistorL)
+-> (?capacitor.unpolarized wikidata-prop:P366 wikidata:Q884755)]
+
+
+ [CouplingCapacitor3: (?capacitor.unpolarized rdf:type wikidata:Q337701),
+(?resistor rdf:type wikidata:Q5321),
+(?transistor.bjt rdf:type wikidata:Q5339),
+(?collector rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?collector),(?collector wikidata-prop:P2561 "2"),
+(?capacitor.unpolarized wikidata-prop:P2789 ?collector),(?capacitor.unpolarized wikidata-prop:P2789 ?resistor)
+-> (?capacitor.unpolarized wikidata-prop:P366 wikidata:Q884755)]
+
+ [CouplingCapacitor4: (?capacitor.polarized rdf:type wikidata:Q1326992),
+(?resistor rdf:type wikidata:Q5321),
+(?transistor.bjt rdf:type wikidata:Q5339),
+(?collector rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?collector),(?collector wikidata-prop:P2561 "2"),
+(?capacitor.polarized wikidata-prop:P2789 ?collector),(?capacitor.polarized wikidata-prop:P2789 ?resistor)
+-> (?capacitor.polarized wikidata-prop:P366 wikidata:Q884755)]
+
+ [CouplingCapacitor5: (?capacitor.unpolarized rdf:type wikidata:Q337701),
+(?transistor.bjt1 rdf:type wikidata:Q5339),
+(?collector1 rdf:type wikidata:Q947546),(?transistor.bjt1 wikidata-prop:P527 ?collector1),(?collector1 wikidata-prop:P2561 "2"),
+(?transistor.bjt2 rdf:type wikidata:Q5339),
+(?base2 rdf:type wikidata:Q947546),(?transistor.bjt2 wikidata-prop:P527 ?base2),(?base2 wikidata-prop:P2561 "1"),
+notEqual(?transistor.bjt1,?transistor.bjt2),
+(?capacitor.unpolarized wikidata-prop:P2789 ?collector1),(?capacitor.unpolarized wikidata-prop:P2789 ?base2)
+-> (?capacitor.unpolarized wikidata-prop:P366 wikidata:Q884755)]
+
+

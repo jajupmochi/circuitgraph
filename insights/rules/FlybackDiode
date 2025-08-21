@@ -1,0 +1,36 @@
+[flybackdiodeWithInductor: (?diode rdf:type wikidata:Q11656),
+(?diodeAnode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeAnode),(?diodeAnode wikidata-prop:P2561 "1"),
+(?diodeCathode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeCathode),(?diodeCathode wikidata-prop:P2561 "2"),
+(?inductor rdf:type wikidata:Q5325),
+(?coil1 rdf:type wikidata:Q947546),(?inductor wikidata-prop:P527 ?coil1),
+(?coil2 rdf:type wikidata:Q947546),(?inductor wikidata-prop:P527 ?coil2),
+notEqual(?coil1, ?coil2),
+(?coil1 wikidata-prop:P2789 ?diodeCathode),(?coil2 wikidata-prop:P2789 ?diodeAnode),
+-> (?diode wikidata-prop:P366 wikidata:Q888791)]
+
+[flybackdiodeWithTransistor:
+(?transistor.bjt rdf:type wikidata:Q5339),
+(?collector rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?collector),(?collector wikidata-prop:P2561 "2"),
+(?emitter rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?emitter),(?emitter wikidata-prop:P2561 "3"),
+(?base rdf:type wikidata:Q947546),(?transistor.bjt wikidata-prop:P527 ?base),(?base wikidata-prop:P2561 "1"),
+
+(?diode rdf:type wikidata:Q11656),
+(?diodeAnode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeAnode),(?diodeAnode wikidata-prop:P2561 "1"),
+(?diodeCathode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeCathode),(?diodeCathode wikidata-prop:P2561 "2"),
+
+(?collector wikidata-prop:P2789 ?diodeCathode),(?emitter wikidata-prop:P2789 ?diodeAnode),
+-> (?diode wikidata-prop:P366 wikidata:Q888791)]
+
+
+[flybackSimple:
+
+(?diode rdf:type wikidata:Q11656),
+(?diodeAnode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeAnode),(?diodeAnode wikidata-prop:P2561 "1"),
+(?diodeCathode rdf:type wikidata:Q947546),(?diode wikidata-prop:P527 ?diodeCathode),(?diodeCathode wikidata-prop:P2561 "2"),
+
+(?relay rdf:type wikidata:Q174053)
+
+(?relay wikidata-prop:P2789 ?diodeAnode), (?relay wikidata-prop:P2789 ?diodeCathode)
+
+
+-> (?diode wikidata-prop:P366 wikidata:Q888791)]
