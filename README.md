@@ -40,10 +40,20 @@ pip install [-e] .
 
 Notice this will install all the dependencies for all submodules, which is listed in [`pyproject.toml`](pyproject.toml) file.
 
-Dowload the CGHD dataset from [Zenodo](https://zenodo.org/record/8266951) or [Kaggle](https://www.kaggle.com/datasets/johannesbayer/cghd1152) and place the content of the zip file in the `gtdb-hd` folder.
+Dowload the CGHD dataset from [Zenodo](https://zenodo.org/record/8266951) or [Kaggle](https://www.kaggle.com/datasets/johannesbayer/cghd1152), unzip it, and place the content of the zip file in the `gtdb-hd` folder.
 
 ## Desktop Application Usage
-While beeing in the root folder of the `main` repository, run:
+
+For Linux users, make sure you have `python3-tk` installed in your system:
+
+```bash
+sudo apt-get update
+sudo apt-get install python3-tk
+# Check if it is installed:
+python3 -c "import tkinter; print(tkinter.TkVersion)"
+```
+
+While being in the root folder of the `main` repository, run:
 
 ```
 python3 -m ui.main
