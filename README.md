@@ -20,7 +20,7 @@ Go to the repo folder:
 cd circuitgraph
 ```
 
-and check out all submodules:
+and check out all submodules (deprecated, no need to do this anymore, since the submodules are now included in the main repo):
 
 ```
 git submodule update --init
