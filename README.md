@@ -1,5 +1,11 @@
 # Circuitgraph
+
 Circuitgraph is a software for extracting electrical graphs from handwritten and printed circuit diagram (schematic) images as well as understanding, explaining and refining them. This repository mainly serves as an aggregation point to get started conveniently. For more details, please refer to the README files of the individual submodules.
+
+**Attention: this repo was originally forked from `Circuitgraph/Extraction` [(link)](https://gitlab.com/circuitgraph/extraction).**
+**We thank the authors who generously provided the codes, which maks this repo possible.)**
+**Since the license of the original repo is not clear (which is annotated as CC in files), this repo is only for research and educational purposes and is thus issued with a GPL-3.0 license.**
+**Please use it as caution.**
 
 ## Setup
 Firt of all, clone this repo using:
@@ -20,11 +26,19 @@ and check out all submodules:
 git submodule update --init
 ```
 
-Install the dependencies:
+Install the dependencies by
+
+```bash
+uv sync --no-cache
+```
+
+or
 
 ```
-pip3.6 install -r ui/requirements.txt
+pip install [-e] .
 ```
+
+Notice this will install all the dependencies for all submodules, which is listed in [`pyproject.toml`](pyproject.toml) file.
 
 Dowload the CGHD dataset from [Zenodo](https://zenodo.org/record/8266951) or [Kaggle](https://www.kaggle.com/datasets/johannesbayer/cghd1152) and place the content of the zip file in the `gtdb-hd` folder.
 
