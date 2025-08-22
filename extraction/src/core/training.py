@@ -14,6 +14,7 @@ from typing import Callable, Tuple
 # Third-Party Imports
 import torch
 from torchinfo import summary
+from halo import Halo
 
 # Project Imports
 from extraction.src.core.package_loader import class_from_package, clsstr
@@ -50,13 +51,21 @@ def apply_set(sample_set, model, optimizer, scheduler, loss_fn: Callable, acc_fn
         preds = torch.zeros((len(sample_set),) + sample_set[0][1].shape)
         infos = [sample[2] for sample in sample_set]
 
-    for batch_nbr in range(len(sample_set) // batch_size):
+    spinner = Halo(text=f"Processing batches...", spinner="monkey")
+    spinner.start()
+
+    total_batches = len(sample_set) // batch_size
+    for batch_nbr in range(total_batches):
+        spinner.text = f"Processing batch {batch_nbr + 1}/{total_batches}"
+
         batch_sample_indices = sample_indices[batch_nbr * batch_size:(batch_nbr + 1) * batch_size]
         batch = [sample_set[i] for i in batch_sample_indices]
         patch_img = torch.zeros([batch_size] + list(batch[0][0].size()), dtype=torch.float32)
         target = torch.zeros([batch_size] + list(batch[0][1].size()))
 
         for sample_nbr, (sample_img, sample_target, sample_info) in enumerate(batch):
+        # for sample_nbr, (sample_img, sample_target) in enumerate(batch):  # fixme: does not work for object detection
+            # patch_img[:] = sample_img
             patch_img[sample_nbr, :] = sample_img
             target[sample_nbr, :] = sample_target
             # TODO rename batch_XXX and add _info
@@ -83,6 +92,8 @@ def apply_set(sample_set, model, optimizer, scheduler, loss_fn: Callable, acc_fn
 
         loss_average += loss.item() / batch_size
         acc_average += sum([acc_fn(pred[i], target[i]) for i in range(batch_size)]) / batch_size
+
+    spinner.succeed("Batch processing complete.")
 
     loss_average = loss_average / (len(sample_set) // batch_size)
     acc_average = acc_average / (len(sample_set) // batch_size)
@@ -132,12 +143,26 @@ def train(model_cls, model_args, optim_cls, optim_args, scheduler_cls, scheduler
                                      indent=2))
 
     set_train = data_loader_cls(drafters=set_train, db_path=db_path, augment=True,
-                                processor_cls=processor_cls, processor_args=processor_args, debug=debug)
+                                processor_cls=processor_cls, processor_args=processor_args, debug=debug,
+                                caching=False)  # fixme: debug, the cached file is over 80GB...
     set_val = data_loader_cls(drafters=set_val, db_path=db_path, augment=False,
-                              processor_cls=processor_cls, processor_args=processor_args, debug=debug)
+                              processor_cls=processor_cls, processor_args=processor_args, debug=debug,
+                              caching=False)  # fixme: debug, the cached file is over 80GB...
 
     model = model_cls(**model_args)
     model.to(device)
+
+
+    def _normalize_optim_args(optim_args: dict) -> dict:
+        args = dict(optim_args or {})
+        # Accept both 'lr' and 'learning_rate'
+        if 'learning_rate' in args and 'lr' not in args:
+            args['lr'] = args.pop('learning_rate')
+        return args
+
+
+    # ... inside train(...)
+    optim_args = _normalize_optim_args(config.get('optimizer_parameter', {}))
     optimizer = optim_cls(model.parameters(), **optim_args)
     scheduler = scheduler_cls(optimizer, **scheduler_args)
 
@@ -182,7 +207,13 @@ if __name__ == "__main__":
     test_mode = True  # fixme: debug
     if test_mode:
         print("Running in test mode. Setting up default config file.")
-        config_file = CUR_ABS_DIR / "../../config/object_detection.json"
+
+        # # Exp1: Object Detection:
+        # config_file = CUR_ABS_DIR / "../../config/object_detection_test.json"  # fixme: debug, use less data
+
+        # Exp2: Segmentation:
+        config_file = CUR_ABS_DIR / "../../config/segmentation_test.json"  # fixme: debug, use less data
+
         # Set the system argument to the config file path:
         sys.argv = [sys.argv[0], str(config_file)]
 
