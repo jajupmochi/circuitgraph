@@ -3,8 +3,9 @@
 Circuitgraph is a software for extracting electrical graphs from handwritten and printed circuit diagram (schematic) images as well as understanding, explaining and refining them. This repository mainly serves as an aggregation point to get started conveniently. For more details, please refer to the README files of the individual submodules.
 
 **Attention: this repo was originally forked from `Circuitgraph/Extraction` [(link)](https://gitlab.com/circuitgraph/extraction).**
-**We thank the authors who generously provided the codes, which maks this repo possible.)**
-**Since the license of the original repo is not clear (which is annotated as CC in files), this repo is only for research and educational purposes and is thus issued with a GPL-3.0 license.**
+**We thank the authors who generously provided the codes, which maks this repo possible.**
+**Since the license of the original repo is not clear (which is annotated as CC in files), this repo is only for research and educational purposes.**
+**The same [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) license as the [CGHD](https://www.kaggle.com/datasets/johannesbayer/cghd1152) dataset is applied to this repo.**
 **Please use it as caution.**
 
 ## Setup
