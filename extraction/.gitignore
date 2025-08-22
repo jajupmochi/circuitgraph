@@ -1,1 +1,5 @@
 __pycache__
+playground/**
+!playground/*.py
+!playground/*.ipynb
+
