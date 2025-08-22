@@ -1,18 +1,19 @@
 """inference.py: Performs Model Inference given an Image and optional Graph Structure"""
 
+import json
 # System Imports
 import sys
-import json
 from os.path import join
-from typing import Callable, Type, Optional, Dict
-
-# Project Imports
-from converter.converter.jsonConverter import JSONConverter
-from extraction.src.core.package_loader import class_from_package
+from pathlib import Path
+from typing import Type, Optional, Dict
 
 # Third-Party Imports
 import cv2
 import torch
+
+# Project Imports
+from converter.converter.jsonConverter import JSONConverter
+from extraction.src.core.package_loader import class_from_package
 
 __author__ = "Johannes Bayer"
 __copyright__ = "Copyright 2023-2024, DFKI"
@@ -21,8 +22,7 @@ __version__ = "0.0.1"
 __email__ = "johannes.bayer@dfki.de"
 __status__ = "Prototype"
 
-
-
+CUR_ABS_DIR = Path(__file__).resolve().parent
 
 
 def inference(model_path: str, model_cls: Type, model_args: Dict,
@@ -55,8 +55,18 @@ def inference(model_path: str, model_cls: Type, model_args: Dict,
     print("Done.")
 
 
-
 if __name__ == "__main__":
+    test_mode = True  # fixme: debug
+    if test_mode:
+        print("Running in test mode. Setting up default config file.")
+
+        # Exp1: Full pipeline:
+        path_image = CUR_ABS_DIR / "../../../gtdb-hd/drafter_0/images/C1_D1_P1.png"
+        path_graph = CUR_ABS_DIR / "../../../gtdb-hd/drafter_0/annotations/C1_D1_P1.xml"
+        config_file = CUR_ABS_DIR / "../../config/object_detection_test.json"  # fixme: debug, use less data
+
+        sys.argv = [sys.argv[0], str(config_file), str(path_image), str(path_graph)]
+
     if len(sys.argv) != 4:
         print("Error: Must provide paths to files: Image (PNG), Graph (Pascal VOC), Config (JSON)")
 
